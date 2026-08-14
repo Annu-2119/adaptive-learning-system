@@ -38,13 +38,13 @@ export default function QuizPage() {
         if (isRecommendedMode) {
 
           const quizRes = await axios.get(
-            `http://localhost:5000/api/quizzes/set/${startSet}`
+            `https://adaptive-learning-system-5a2d.onrender.com/api/quizzes/set/${startSet}`
           );
 
           setQuizSets([quizRes.data]);
 
           const questionRes = await axios.get(
-            `http://localhost:5000/api/questions/quizset/${startSet}`
+            `https://adaptive-learning-system-5a2d.onrender.com/api/questions/quizset/${startSet}`
           );
 
           setAllQuestions(questionRes.data);
@@ -53,7 +53,7 @@ export default function QuizPage() {
         } else {
  
           const res = await axios.get(
-            `http://localhost:5000/api/quizzes/${courseId}`
+            `https://adaptive-learning-system-5a2d.onrender.com/api/quizzes/${courseId}`
           );
 
           setQuizSets(res.data);
@@ -61,7 +61,7 @@ export default function QuizPage() {
           const all = await Promise.all(
             res.data.map((set: any) =>
               axios.get(
-                `http://localhost:5000/api/questions/quizset/${set.id}`
+                `https://adaptive-learning-system-5a2d.onrender.com/api/questions/quizset/${set.id}`
               )
             )
           );
@@ -102,7 +102,7 @@ export default function QuizPage() {
       }
 
       const res = await axios.post(
-        "http://localhost:5000/api/submitQuiz",
+        "https://adaptive-learning-system-5a2d.onrender.com/api/submitQuiz",
         {
           studentId: user.id,
           courseId,

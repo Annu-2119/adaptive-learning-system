@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const API = "http://localhost:5000/api";
+const API = "https://adaptive-learning-system-5a2d.onrender.com/api";
 
 export default function QuestionsPage() {
 

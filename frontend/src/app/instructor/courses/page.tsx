@@ -15,7 +15,7 @@ export default function CourseManagementPage() {
 
   const loadCourses = () => {
     axios
-      .get("http://localhost:5000/api/courses")
+      .get("https://adaptive-learning-system-5a2d.onrender.com/api/courses")
       .then((res) => setCourses(res.data))
       .catch(console.error);
   };
@@ -28,12 +28,12 @@ export default function CourseManagementPage() {
     try {
       if (editingId) {
         await axios.put(
-          `http://localhost:5000/api/courses/${editingId}`,
+          `https://adaptive-learning-system-5a2d.onrender.com/api/courses/${editingId}`,
           form
         );
       } else {
         await axios.post(
-          "http://localhost:5000/api/courses",
+          "https://adaptive-learning-system-5a2d.onrender.com/api/courses",
           form
         );
       }
@@ -57,7 +57,7 @@ export default function CourseManagementPage() {
 
     try {
       await axios.delete(
-        `http://localhost:5000/api/courses/${id}`
+        `https://adaptive-learning-system-5a2d.onrender.com/api/courses/${id}`
       );
 
       loadCourses();

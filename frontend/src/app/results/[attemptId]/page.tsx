@@ -11,7 +11,7 @@ export default function ResultPage() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/results/${params.attemptId}`)
+      .get(`https://adaptive-learning-system-5a2d.onrender.com/api/results/${params.attemptId}`)
       .then((res) => {
         setResult(res.data);
       })

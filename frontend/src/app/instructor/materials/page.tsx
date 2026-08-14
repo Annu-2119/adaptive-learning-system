@@ -12,14 +12,14 @@ export default function MaterialsPage() {
 
   const loadMaterials = () => {
     axios
-      .get("http://localhost:5000/api/materials")
+      .get("https://adaptive-learning-system-5a2d.onrender.com/api/materials")
       .then((res) => setMaterials(res.data))
       .catch(console.error);
   };
 
   const loadCourses = () => {
     axios
-      .get("http://localhost:5000/api/courses")
+      .get("https://adaptive-learning-system-5a2d.onrender.com/api/courses")
       .then((res) => setCourses(res.data))
       .catch(console.error);
   };
@@ -43,7 +43,7 @@ export default function MaterialsPage() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/materials",
+        "https://adaptive-learning-system-5a2d.onrender.com/api/materials",
         formData,
         {
           headers: {
@@ -70,7 +70,7 @@ export default function MaterialsPage() {
 
     try {
       await axios.delete(
-        `http://localhost:5000/api/materials/${id}`
+        `https://adaptive-learning-system-5a2d.onrender.com/api/materials/${id}`
       );
 
       alert("Material deleted.");

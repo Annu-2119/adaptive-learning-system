@@ -34,7 +34,7 @@ export default function StudentDashboard() {
       setUser(currentUser);
 
       axios
-        .get(`http://localhost:5000/api/student-dashboard/${currentUser.id}`)
+        .get(`https://adaptive-learning-system-5a2d.onrender.com/api/student-dashboard/${currentUser.id}`)
         .then((res) => {
           setDashboard(res.data.dashboard);
           setLoadingDashboard(false);
@@ -48,10 +48,10 @@ export default function StudentDashboard() {
     }
 
     axios
-      .get("http://localhost:5000/api/courses")
+      .get("https://adaptive-learning-system-5a2d.onrender.com/api/courses")
       .then((res) => {
         setCourses(res.data);
-        return axios.get("http://localhost:5000/api/materials");
+        return axios.get("https://adaptive-learning-system-5a2d.onrender.com/api/materials");
       })
       .then((materialRes) => {
         setMaterials(materialRes.data);
@@ -428,7 +428,7 @@ export default function StudentDashboard() {
                           </div>
 
                           <a
-                            href={`http://localhost:5000/uploads/materials/${m.file_path}`}
+                            href={`https://adaptive-learning-system-5a2d.onrender.com/uploads/materials/${m.file_path}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="

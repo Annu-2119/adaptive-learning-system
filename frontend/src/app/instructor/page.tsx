@@ -78,7 +78,7 @@ export default function InstructorDashboard() {
   const loadAnalytics = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/analytics"
+        "https://adaptive-learning-system-5a2d.onrender.com/api/analytics"
       );
 
       console.log(
@@ -126,7 +126,7 @@ export default function InstructorDashboard() {
   const loadScoreData = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/analytics/scores"
+        "https://adaptive-learning-system-5a2d.onrender.com/api/analytics/scores"
       );
 
       console.log(
@@ -150,7 +150,7 @@ export default function InstructorDashboard() {
   const loadAttempts = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/instructor/attempts"
+        "https://adaptive-learning-system-5a2d.onrender.com/api/instructor/attempts"
       );
 
       console.log(
@@ -261,7 +261,7 @@ export default function InstructorDashboard() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/feedback",
+        "https://adaptive-learning-system-5a2d.onrender.com/api/feedback",
         {
           attemptId,
           message: message.trim(),
@@ -359,7 +359,7 @@ export default function InstructorDashboard() {
               </button>
 
               <a
-                href="http://localhost:5000/api/export/attempts"
+                href="https://adaptive-learning-system-5a2d.onrender.com/api/export/attempts"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="

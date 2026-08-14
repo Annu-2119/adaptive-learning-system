@@ -13,7 +13,7 @@ export default function Register() {
   const registerUser = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/register",
+        "https://adaptive-learning-system-5a2d.onrender.com/api/auth/register",
         form
       );
 

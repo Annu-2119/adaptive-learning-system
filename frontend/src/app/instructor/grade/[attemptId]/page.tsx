@@ -50,7 +50,7 @@ export default function GradePage() {
       setLoading(true);
 
       const res = await axios.get(
-        `http://localhost:5000/api/grading/${attemptId}`
+        `https://adaptive-learning-system-5a2d.onrender.com/api/grading/${attemptId}`
       );
 
       console.log(
@@ -100,7 +100,7 @@ export default function GradePage() {
       );
 
       await axios.post(
-        "http://localhost:5000/api/grading/mark",
+        "https://adaptive-learning-system-5a2d.onrender.com/api/grading/mark",
         {
           answerId,
           marks,

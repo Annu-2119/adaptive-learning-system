@@ -16,7 +16,7 @@ export default function Login() {
   const loginUser = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://adaptive-learning-system-5a2d.onrender.com/api/auth/login",
         form
       );
 

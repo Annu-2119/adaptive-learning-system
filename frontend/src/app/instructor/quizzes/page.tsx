@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 
-const API = "http://localhost:5000/api";
+const API = "https://adaptive-learning-system-5a2d.onrender.com/api";
 
 const inputStyle =
   "w-full border border-slate-300 rounded-xl px-4 py-2 mb-3 text-black focus:ring-2 focus:ring-blue-500 outline-none";
