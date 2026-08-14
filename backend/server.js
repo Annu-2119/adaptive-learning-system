@@ -27,6 +27,36 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Health check
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "Adaptive Learning System backend is running",
+  });
+});
+
+app.get("/test-db", (req, res) => {
+  const db = require("./db");
+
+  db.query("SELECT 1 AS test", (err, results) => {
+    if (err) {
+      console.error("Database test failed:", err);
+
+      return res.status(500).json({
+        success: false,
+        message: "Database connection failed",
+        error: err.message,
+      });
+    }
+
+    res.json({
+      success: true,
+      message: "Backend and MySQL database are connected",
+      database: results,
+    });
+  });
+});
+
 // Serve uploaded files
 app.use(
   "/uploads",
