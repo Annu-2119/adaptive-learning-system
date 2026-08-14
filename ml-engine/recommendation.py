@@ -2,15 +2,24 @@ import sys
 import json
 import joblib
 import os
+import pandas as pd
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-model = joblib.load(os.path.join(BASE_DIR, "model.pkl"))
+
+model = joblib.load(
+    os.path.join(BASE_DIR, "model.pkl")
+)
 
 score = float(sys.argv[1])
 mastered = int(sys.argv[2])
 weak_topic = sys.argv[3]
 
-level = model.predict([[score, mastered]])[0]
+features = pd.DataFrame(
+    [[score, mastered]],
+    columns=["score", "mastered"]
+)
+
+level = model.predict(features)[0]
 
 response = {
     "score": score,
